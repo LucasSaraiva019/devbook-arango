@@ -9,10 +9,10 @@ import (
 
 type User struct {
 	gorm.Model
-	Name     string `json:"nome,omitempty"`
+	Name     string `json:"name,omitempty"`
 	Nick     string `json:"nick,omitempty"`
 	Email    string `json:"email,omitempty"`
-	Password string `json:"senha,omitempty"`
+	Password string `json:"password,omitempty"`
 }
 
 func (user *User) Prepare(stage string) error {
