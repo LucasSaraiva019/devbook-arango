@@ -1,13 +1,13 @@
 package router
 
 import (
-	"github.com/LucasSaraiva019/devbook-arango/src/router/rotas"
+	"github.com/LucasSaraiva019/devbook-arango/src/router/routes"
 
 	"github.com/gorilla/mux"
 )
 
-// Gerar vai retornar um router com as rotas configuradas
-func Gerar() *mux.Router {
+// Generate will return a router with configured routes
+func Generate() *mux.Router {
 	r := mux.NewRouter()
-	return rotas.Configurar(r)
+	return routes.Configure(r)
 }
