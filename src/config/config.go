@@ -9,22 +9,22 @@ import (
 )
 
 var (
-	// StringConexaoBanco é a string de conexão com o Arango
-	StringConexaoBanco = ""
-	// Porta onde a API vai estar rodando
-	Porta = 0
+	// DatabaseConnection is a connection string with Arango
+	DatabaseConnection = ""
+	// Port on which the API will run
+	Port = 0
 )
 
-// Carregar vai inicializar as variaveis de ambiente
-func Carregar() {
-	var erro error
+// Initialize will init as environment variables
+func Initialize() {
+	var err error
 
-	if erro = godotenv.Load(); erro != nil {
-		log.Fatal(erro)
+	if err = godotenv.Load(); err != nil {
+		log.Fatal(err)
 	}
-	Porta, erro = strconv.Atoi(os.Getenv("API_PORT"))
-	if erro != nil {
-		Porta = 9000
+	Port, err = strconv.Atoi(os.Getenv("API_PORT"))
+	if err != nil {
+		Port = 9000
 	}
 
 }
